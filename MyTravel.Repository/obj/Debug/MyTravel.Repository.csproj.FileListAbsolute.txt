@@ -1,0 +1,15 @@
+C:\Users\hp2015\source\repos\MyTravel\MyTravel.Repository\bin\Debug\MyTravel.Repository.dll.config
+C:\Users\hp2015\source\repos\MyTravel\MyTravel.Repository\bin\Debug\MyTravel.Repository.dll
+C:\Users\hp2015\source\repos\MyTravel\MyTravel.Repository\bin\Debug\MyTravel.Repository.pdb
+C:\Users\hp2015\source\repos\MyTravel\MyTravel.Repository\bin\Debug\EntityFramework.dll
+C:\Users\hp2015\source\repos\MyTravel\MyTravel.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hp2015\source\repos\MyTravel\MyTravel.Repository\bin\Debug\MyTravel.Entity.dll
+C:\Users\hp2015\source\repos\MyTravel\MyTravel.Repository\bin\Debug\MyTravel.Entity.pdb
+C:\Users\hp2015\source\repos\MyTravel\MyTravel.Repository\bin\Debug\MyTravel.Entity.dll.config
+C:\Users\hp2015\source\repos\MyTravel\MyTravel.Repository\bin\Debug\EntityFramework.xml
+C:\Users\hp2015\source\repos\MyTravel\MyTravel.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hp2015\source\repos\MyTravel\MyTravel.Repository\obj\Debug\MyTravel.Repository.csprojAssemblyReference.cache
+C:\Users\hp2015\source\repos\MyTravel\MyTravel.Repository\obj\Debug\MyTravel.Repository.csproj.CoreCompileInputs.cache
+C:\Users\hp2015\source\repos\MyTravel\MyTravel.Repository\obj\Debug\MyTravel.Repository.csproj.CopyComplete
+C:\Users\hp2015\source\repos\MyTravel\MyTravel.Repository\obj\Debug\MyTravel.Repository.dll
+C:\Users\hp2015\source\repos\MyTravel\MyTravel.Repository\obj\Debug\MyTravel.Repository.pdb

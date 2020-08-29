@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "GetKategoriya";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model MyTravel.Entity.Kategoriya
+
+
+    <div class="wrap">
+        <div class="about">
+            <h3>@Model.Adi Kategoriyada olan mehsullarimiz</h3>
+            @{
+                foreach (var item in Model.Photos.Where(x => x.IsActive == true))
+                {
+                    <img src="@item.BoyukYol" alt="" />
+                }
+            }
+        </div>
+        <div class="grids">
+            <div class="box1">
+                <div class="padding">
+                    <h4>Yeni 10 mehsul</h4>
+                    <ul class="list list-pad">
+                        @foreach (MyTravel.Entity.Mehsul item in ViewBag.TopOn)
+                        {
+                            <li class="list-bg"><span></span><a href="/Home/GetMehsul/@item.Id">@item.Adi</a></li>
+                        }
+                    </ul>
+                </div>
+                <div class="desti-middle">
+                    <h4>@Model.Adi kateqoriyasi mesullarimiz</h4>
+                    @{
+                        foreach (MyTravel.Entity.Mehsul item in ViewBag.Mehsullar)
+                        {
+                            <div class="box-left">
+                                <div class="bot-img">
+                                    @if (item.Photos.Count != 0)
+                                    {
+                                        <img src="@MyTravel.App_Classes.Tools.Context.Photos.FirstOrDefault(x=>x.MehsulID==item.Id && x.Main==true && x.IsActive==true).KicikYol" alt="" />
+                                    }
+
+                                </div>
+                                <div style="word-break:break-all;" class="bot-desc">
+                                    <a href="/Home/GetMehsul/@item.Id" class="btn btn-link">@item.Adi</a>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        }
+                    }
+
+
+                </div>
+                <div style="word-break:break-all;" class="desti-right text-break">
+                    <h4>Kategoriyalarimiz Haqqinda</h4>
+
+
+                    Butun kategoriyalarimiz saglam ve tehlukesizdir. Teklif ve tenqidleriniz ucun mesajlarinizi gozleyirik.
+
+
+                </div>
+
+
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>

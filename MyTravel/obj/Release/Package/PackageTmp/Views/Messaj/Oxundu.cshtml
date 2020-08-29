@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Oxundu";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@{ if (Model == 0)
+    {
+        <h2 class="bg-danger"> Error</h2>
+    }
+    else
+    {
+        <h2 class="bg-success">Success</h2>
+    }
+}
+
+<br />
+<br />
+<br />
+<a class="btn btn-success" href="/Messaj/YeniMesaj">Yeni mesajlara qayit</a>
+<br />
+<br />
+<br />
+<a class="btn btn-primary" href="/Messaj/Oxunan">Oxunan mesajlara qayit</a>
+<br />
+<br />
+<br />
+<a class="btn btn-info" href="/Messaj/Index">Butun mesajlara qayit</a>

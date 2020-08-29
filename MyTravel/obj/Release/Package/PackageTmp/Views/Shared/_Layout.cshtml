@@ -1,0 +1,104 @@
+﻿<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>cr7-Trip</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="/Content/UserInterface/css/style.css" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="/Content/UserInterface/css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="/Content/UserInterface/js/jquery.min.js"></script>
+    <script src="/Content/UserInterface/js/responsiveslides.min.js"></script>
+
+    @*adminden gelen linkler*@
+    <link href="/Content/Admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link href="/Content/Admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="/Content/Admin/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="/Content/Admin/css/sb-admin.css" rel="stylesheet">
+
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+            // Slideshow 1
+            $("#slider1").responsiveSlides({
+                auto: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+            });
+        });
+    </script>
+    @RenderSection("header", false)
+</head>
+<body>
+    <div class="header">
+        <div class="wrap">
+            <div class="logo"><a href="/Home/Index"><img src="/Content/Logo/3e5b9a13-d2db-4c09-9336-50aa10a84115.png" alt="" /></a></div>
+            <div class="con-right">
+                <div class="grid1-l-img">
+                    <img src="#" alt="">
+                </div>
+                <div class="grid1-l-desc">
+                    <p>Contact : +994554036162</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="wrap">
+            <ul id="nav">
+                <li><a href="/Home/Index">Home</a></li>
+                <li><a class="hsubs" href="/Home/Haqqimizda">Haqqimizda</a></li>
+                @*<li>
+                        <a class="hsubs" href="/Content/UserInterface/destinations.html">Destinations</a>
+                        <ul class="subs">
+                            <li><a href="/Content/UserInterface/#">Hotels</a></li>
+                            <li><a href="/Content/UserInterface/#">Restaurants</a></li>
+                            <li><a href="/Content/UserInterface//Content/UserInterface#">Beach Resorts</a></li>
+                        </ul>
+                    </li>*@
+                @*<li><a class="hsubs" href="/Content/UserInterface//Content/UserInterfacedestinations.html">Free Travel Guides</a></li>*@
+                <li><a href="/Home/Elaqe">Bizimle Elaqe</a></li>
+                <li><a href="/Home/Kategoriyalar">Kategoriyalarimiz</a></li>
+                @{
+                    foreach (var item in MyTravel.App_Classes.Tools.Context.aspnet_Users)
+                    {
+                        if (User.Identity.Name == item.UserName)
+                        {
+                            <li><a href="/Admin/Index">Admin Panel</a></li>
+                        }
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+    @RenderSection("slider", false)
+
+    <div class"content">
+        @RenderBody()
+    </div>
+    <div class="footer-bottom">
+        <div class="wrap">
+            <div class="copy">
+                <p>&copy; 2013 cr7-Trip. All Rights Reserved | Design by <a href="#">Rahib Jafarov</a></p>
+            </div>
+        </div>
+    </div>
+    @RenderSection("footer", false)
+    
+    
+    </body>
+    </html>

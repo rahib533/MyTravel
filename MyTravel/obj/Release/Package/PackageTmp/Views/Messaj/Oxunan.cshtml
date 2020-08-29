@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewBag.Title = "Oxunan";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+
+@model IEnumerable<MyTravel.Entity.Messaj>
+
+<div class="container">
+    <div class="card card-register mx-auto mt-5">
+        <br /><br />
+        <a class="btn btn-info" href="/Messaj/Oxunan">Sehifeni Yenile</a>
+        <br /><br /><br />
+        <div class="card-header">Oxunan Mesajlariniz</div>
+        <div class="card-body">
+            <form method="post" action="#">
+
+                @foreach (var item in Model)
+                {
+
+                    <div class="form-group" style="background-color:lawngreen;">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input name="Adi" type="text" id="adi" class="form-control" readonly value="@item.Name" autofocus="autofocus">
+                                    <label for="adi">Adi</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" style="background-color:lawngreen;">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input name="Soyad" type="text" id="soyad" class="form-control" readonly value="@item.Surname" autofocus="autofocus">
+                                    <label for="soyad">Soyad</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" style="background-color:lawngreen;">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input name="Tel" type="text" id="tel" class="form-control" readonly value="@item.Phone" autofocus="autofocus">
+                                    <label for="tel">Tel</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" style="background-color:lawngreen;">
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <div class="form-label-group">
+                                    <input name="Email" type="text" id="email" class="form-control" readonly value="@item.Email" autofocus="autofocus">
+                                    <label for="email">Email</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" style="background-color:lawngreen;">
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <div class="form-label-group">
+                                    <input name="Adres" type="text" id="adres" class="form-control" readonly value="@item.Adress" autofocus="autofocus">
+                                    <label for="adres">Adres</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" style="background-color:lawngreen;">
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <div class="form-label-group">
+                                    <textarea name="Mesaj" readonly id="mesaj" class="form-control" rows="10" cols="50" style="font-size:x-large"> @item.MessageText </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <div class="form-label-group">
+                                    <a class="btn btn-danger btn-block" href="/Messaj/Sil/@item.Id">Mesaji Sil</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr style="font-size:larger;" />
+                    <br /><br /><br /><br />
+                }
+            </form>
+            <div class="text-center">
+                <a class="d-block small mt-3" href="/Admin/Index">Geri qayıt</a>
+                <a class="d-block small" href="/Admin/Index">Ana səhifə</a>
+            </div>
+        </div>
+    </div>
+</div>

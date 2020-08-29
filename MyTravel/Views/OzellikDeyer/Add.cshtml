@@ -1,0 +1,143 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <div class="card card-register mx-auto mt-5">
+        <div class="card-header">Ozellik Tipi Əlavə Et</div>
+        <div class="card-body">
+            <form method="post" action="/OzellikDeyer/Add">
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <input name="Adi" type="text" id="adi" class="form-control" placeholder="Deyerin Adi" required="required" autofocus="autofocus">
+                                <label for="adi">Deyerin adı</label>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <input name="Aciqlama" type="text" id="aciqlama" class="form-control" placeholder="Aciqlama" required="required">
+                                <label for="aciqlama">Aciqlama</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-3">
+                            <div class="form-label-group">
+                                <span style="text-align:center; font-size:large"> Kateqoriya sechin: </span>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="form-label-group">
+                                <select id="kat" class="form-control" name="KategoriyaID">
+
+                                    @{
+                                        foreach (MyTravel.Entity.Kategoriya item in ViewBag.Kategoriyalar)
+                                        {
+                                            <option value="@item.Id">@item.Adi</option>
+                                        }
+                                    }
+
+                                </select>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <div id="empty">
+
+                </div>
+                <div id="empty2">
+
+                </div>
+
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <div class="form-label-group">
+                                <input class="form-control btn btn-primary btn-block" type="submit" value="Elave Et" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </form>
+            <div class="text-center">
+                <a class="d-block small mt-3" href="/OzellikDeyer/Index">Geri qayıt</a>
+                <a class="d-block small" href="/Admin/Index">Ana səhifə</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section footer{
+
+
+    <script src="~/Content/Admin/js/sb-admin.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#kat").click(function () {
+                var deyer = $("#kat").val();
+
+                $.ajax({
+                    type: "GET",
+                    url: "/OzellikDeyer/OzellikTipPW",
+                    data: { id: deyer },
+                    success: function (gelen) {
+                        $("#empty").empty();
+                        $("#empty2").empty();
+                        $("#empty").append(gelen);
+
+
+
+                        $("#ozt").click(function () {
+                            var deyer2 = $("#ozt").val();
+
+                            $.ajax({
+                                type: "GET",
+                                url: "/OzellikDeyer/OzellikDeyerPW",
+                                data: { id: deyer2 },
+                                success: function (gelen2) {
+                                    $("#empty2").empty();
+                                    $("#empty2").append(gelen2);
+                                },
+                                error: function () {
+                                    alert("xeta oldu");
+                                }
+                            });
+                        });
+
+
+                    },
+                    error: function () {
+                        alert("nese duz getmedi");
+                    }
+                });
+            });
+        });
+    </script>
+
+
+}

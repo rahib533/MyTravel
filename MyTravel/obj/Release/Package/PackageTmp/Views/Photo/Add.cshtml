@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Slidere sekil elave et</h2>
+
+<form enctype="multipart/form-data" method="post" action="/Photo/Add2">
+    @*<input type="hidden" value="@Model.Id" name="id" />*@
+    <br /><br />
+    <input type="file" name="fileUpload" />
+    <br /> <br />
+    <input style="margin-left:350px" type="submit" value="Kayd ele" class="btn btn-success" />
+</form>
+

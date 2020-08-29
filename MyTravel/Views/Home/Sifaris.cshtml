@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Sifaris";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@{ if (Model == 0)
+    {
+        <h2 class="bg-danger"> Error</h2>
+    }
+    else
+    {
+        <h2 class="bg-success">Success. Sizin sifarisiniz qebul olundu. Zehmet olmazsa size cavab verilene qeder gozleyin</h2>
+    }
+}
+<br />
+<br />
+<br />
+<a class="btn btn-primary" href="/Home/Index">Ana Sehife</a>

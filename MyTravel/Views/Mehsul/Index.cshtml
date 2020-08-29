@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@{ 
+    Html.RenderAction("IndexPW", "Mehsul");
+}
+
+
+
+
+@section footer{
+
+    <script src="~/Content/Admin/js/sb-admin.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            $(".mehsulSil").click(function () {
+                var deyer = $(this).data("mehsul");
+
+                $.ajax({
+
+                    type: "GET",
+                    url: "/Mehsul/Sil/" + deyer,
+
+                    success: function my(gelen) {
+                        alert("Mehsul Silindi");
+                    },
+                    error: function my() {
+                        alert("xeta oldu");
+                    }
+
+                });
+            });
+        });
+
+    </script>
+
+
+}
+

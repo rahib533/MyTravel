@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "MehsulOzellik";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model MyTravel.Entity.Mehsul
+
+
+<div class="container">
+    <div class="card card-register mx-auto mt-5">
+        <div class="card-header">Məhsul Satisi</div>
+        <div class="card-body">
+            <form method="post" action="/Home/Sifaris">
+
+                <input type="hidden" name="MehsulID" value="@Model.Id" />
+
+                @{
+                    foreach (var item in ViewBag.Dictionary)
+                    {
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-3">
+                                    <div class="form-label-group">
+                                        <span style="text-align:center; font-size:large"> @item.Key: </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="form-label-group">
+                                        <select class="form-control" name="OzellikDeyerID">
+
+                                            @{
+                                                foreach (var item2 in item.Value)
+                                                {
+                                                    <option value="@item2.Id">@item2.Adi</option>
+                                                }
+                                            }
+
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <br />
+                    }
+
+                }
+                <br />
+
+
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <input name="Ad" type="text" id="adi" class="form-control" placeholder="Ad" required="required" autofocus="autofocus">
+                                <label for="adi">Ad</label>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <input name="Soyad"  type="text" id="soyad" class="form-control" placeholder="Soyad" required="required">
+                                <label for="soyad">Soyad</label>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-5">
+                            <div class="form-label-group">
+                                <input name="ElaqeTel" type="tel" id="tel" class="form-control" placeholder="Tel" required="required" autofocus="autofocus">
+                                <label for="tel">Tel</label>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="col-md-7">
+                            <div class="form-label-group">
+                                <input name="Email" type="email" id="email" class="form-control" placeholder="Email" required="required">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <div class="form-label-group">
+                                <input name="Adress" type="text" id="adres" class="form-control" placeholder="Adres" required="required" autofocus="autofocus">
+                                <label for="adres">Adres</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form1">
+                    <div>
+                        <textarea placeholder="Messaj" name="Messaj"></textarea>
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" class="btn btn-success" value="Sifarisi Tesdiqle" />
+                </div>
+
+            </form>
+            <div class="text-center">
+                <a class="d-block small" href="/Home/Index">Ana səhifə</a>
+            </div>
+        </div>
+    </div>
+</div>

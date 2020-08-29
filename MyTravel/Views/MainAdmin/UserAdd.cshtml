@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "UserAdd";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+    <div class="container">
+        <div class="card card-register mx-auto mt-5">
+            <div class="card-header">Istifadeci Əlavə Et</div>
+            <div class="card-body">
+                <form method="post" action="/MainAdmin/UserAdd">
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input name="Adi" type="text" id="firstName" class="form-control" placeholder="Istifadeci adi" required="required" autofocus="autofocus">
+                                    <label for="firstName">Istifadeci adı</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input name="Parol" type="password" id="firstName1" class="form-control" placeholder="Shifre" required="required" autofocus="autofocus">
+                                    <label for="firstName1">Shifre</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-9">
+                                <div class="form-label-group">
+                                    <input name="Email" type="email" id="firstNamee" class="form-control" placeholder="Email" required="required" autofocus="autofocus">
+                                    <label for="firstNamee">Email</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input name="GizliSual" type="text" id="firstNamea" class="form-control" placeholder="Gizli Sual" required="required" autofocus="autofocus">
+                                    <label for="firstNamea">Gizli Sual</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input name="GizliCavab" type="password" id="firstName17" class="form-control" placeholder="Gizli Cavab" required="required" autofocus="autofocus">
+                                    <label for="firstName17">Gizli Cavab</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <div class="form-label-group">
+                                    <input class="form-control btn btn-primary btn-block" type="submit" value="Elave Et" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                @if (ViewBag.Mesaj != null)
+                {
+                    <span class="danger error-404" id="hata">
+                        ViewBag.Mesaj
+                    </span>
+                }
+
+                <div class="text-center">
+                    <a class="d-block small mt-3" href="/MainAdmin/Index">Geri qayıt</a>
+                    <a class="d-block small" href="/Admin/Index">Ana səhifə</a>
+                </div>
+            </div>
+        </div>
+    </div>
+

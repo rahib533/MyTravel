@@ -1,0 +1,145 @@
+﻿
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@model MyTravel.Entity.Mehsul
+
+    <div class="container">
+        <div class="card card-register mx-auto mt-5">
+            <div class="card-header">@Model.Adi Məhsulunu Guncelle</div>
+            <div class="card-body">
+                <form method="post" action="/Mehsul/Update2">
+                    <input type="hidden" name="Id" value="@Model.Id" />
+
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input name="Adi" value="@Model.Adi" type="text" id="adi" class="form-control" placeholder="Mehsul Adi" required="required" autofocus="autofocus">
+                                    <label for="adi">Məhsul adı</label>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="col-md-3">
+                                <div class="form-label-group">
+                                    <input name="Qiymeti" value="@Model.Qiymeti" step="0.01" type="number" id="qiymet" class="form-control" placeholder="Satis Qiymeti" required="required">
+                                    <label for="qiymet">Satis Qiymeti</label>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="col-md-3">
+                                <div class="form-label-group">
+                                    <input name="Endirimi" value="@Model.Endirimi" step="0.01" type="number" id="endirim" class="form-control" placeholder="Endirim Faizi" required="required">
+                                    <label for="endirim">Endirim Faizi</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-4">
+                                <div class="form-label-group">
+
+                                    <p><b>Mehsulun cari kategoriyasi</b></p>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-label-group">
+
+                                    <select class="form-control">
+                                        <option>@Model.Kategoriya.Adi</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    @*<div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-3">
+                                <div class="form-label-group">
+                                    <span style="text-align:center; font-size:large"> Kateqoriya sechin: </span>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="form-label-group">
+                                    <select id="kat" class="form-control" name="KategoriyaID">
+
+                                        @{
+                                            foreach (MyTravel.Entity.Kategoriya item in ViewBag.Kategoriyalar)
+                                            {
+                                                <option value="@item.Id">@item.Adi</option>
+                                            }
+                                        }
+
+                                    </select>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>*@
+
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-9">
+                                <div class="form-label-group">
+                                    <input name="Aciqlama" value="@Model.Aciqlama" type="text" id="aciqlama" class="form-control" placeholder="Mehsulun Aciqlamasi" required="required" autofocus="autofocus">
+                                    <label for="aciqlama">Məhsulun aciqlamasi</label>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="col-md-3">
+                                <div class="form-label-group">
+                                    <input name="Tarixi" value="@Model.Tarixi" step="0.01" type="date" id="tarix" class="form-control" placeholder="Bas tutacaq tarix" required="required">
+                                    <label for="tarix">Bas tutacaq tarix</label>
+                                </div>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+
+                    <br />
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <p><b>Mehsul Haqqinda</b></p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <div class="form-label-group">
+                                    <textarea name="Haqqinda" id="haqqinda" class="form-control" placeholder="Mehsulun haqqinda" required="required" autofocus="autofocus" rows="10" cols="50" style="font-size:x-large"> @Model.Haqqinda </textarea>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <div class="form-label-group">
+                                    <input class="form-control btn btn-primary btn-block" type="submit" value="Gunclle" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="text-center">
+                    <a class="d-block small mt-3" href="/Mehsul/Index">Geri qayıt</a>
+                    <a class="d-block small" href="/Admin/Index">Ana səhifə</a>
+                </div>
+            </div>
+        </div>
+    </div>
+

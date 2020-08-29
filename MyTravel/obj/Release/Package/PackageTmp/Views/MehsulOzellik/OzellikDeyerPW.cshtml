@@ -1,0 +1,27 @@
+﻿
+@model IEnumerable<MyTravel.Entity.OzellikDeyer>
+
+
+<div class="form-group">
+    <div class="form-row">
+        <div class="col-md-6">
+            <div class="form-label-group">
+                <span style="text-align:center; font-size:large"> Ozellik deyerleri deyerler: </span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-label-group">
+                <select id="ozd" class="form-control" name="OzellikDeyerID">
+
+                    @{
+                        foreach (var item in Model)
+                        {
+                            <option value="@item.Id">@item.Adi</option>
+                        }
+                    }
+
+                </select>
+            </div>
+        </div>
+    </div>
+</div>

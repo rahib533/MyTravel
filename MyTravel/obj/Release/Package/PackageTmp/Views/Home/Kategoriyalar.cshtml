@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Kategoriyalar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@model IEnumerable<MyTravel.Entity.Kategoriya>
+
+
+
+    <div class="wrap">
+        <div class="wrapper">
+            <div class="con-top">
+                <h3>Bizim travele xos gelmisiz!</h3>
+                <p>Biz saysiz hesabsiz tur paketler hazirlayiriq. Bu tur paketler musterimizlerin isteklerine gore genisledile ve darlasdirila bilir. Daimi musterimizlere endirimlerimiz movcuddur. Siz de bizim aileye qosulun ve dunyani bizimle kesf edin</p>
+            </div>
+            <div class="con-bot">
+                @{
+                    int a = 1;
+                }
+                @foreach (var item in Model)
+                {
+                    if (a % 3 == 0)
+                    {
+                        <div class="right">
+                            <div class="bot-left">
+                                @if (item.Photos.Count != 0)
+                                {
+                                    <img src="@MyTravel.App_Classes.Tools.Context.Photos.FirstOrDefault(x=>x.KategoriyaID==item.Id && x.Main==true).OrtaYol" alt="" />
+                                }
+                            </div>
+                            <div class="left-text">
+
+                                <h4>@item.Adi</h4>
+                                
+                                <p>@item.Aciqlama</p>
+                                <p><a href="/Home/GetKategoriya/@item.Id"><span class="read">Read More >></span></a></p>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="left">
+                            <div class="bot-left">
+                                @if (item.Photos.Count != 0)
+                                {
+                                    <img src="@MyTravel.App_Classes.Tools.Context.Photos.FirstOrDefault(x=>x.KategoriyaID==item.Id && x.Main==true).OrtaYol" alt="" />
+                                }
+
+                            </div>
+                            <div class="left-text">
+                                <h4>@item.Adi</h4>
+                                
+                                <p>@item.Aciqlama</p>
+                                <p><a href="/Home/GetKategoriya/@item.Id"><span class="read">Read More >></span></a></p>
+                            </div>
+                        </div>
+                    }
+                    a++;
+                }
+
+
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>

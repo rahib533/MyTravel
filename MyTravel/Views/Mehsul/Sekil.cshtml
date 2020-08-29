@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Sekil";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@model IEnumerable<MyTravel.Entity.Photos>
+
+<h2> Mehsulun Sekilleri </h2>
+
+
+
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Adı</th>
+            <th>SIL</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>Mehsulun adi</th>
+            <th>Sekili Gor</th>
+            <th>SIL</th>
+        </tr>
+    </tfoot>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+               <td> @item.Mehsul.Adi</td>
+                <td><a href="@item.BoyukYol" class="sekil">Sekili gor</a></td>
+                <td><a href="/Mehsul/SekilSil/@item.Id">SIL</a></td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+<script src="~/Content/jquery.fancybox.js"></script>
+
+
+    
+        <script>
+            $(function () {
+                jQuery(".sekil").fancybox();
+            });
+        </script>
+    

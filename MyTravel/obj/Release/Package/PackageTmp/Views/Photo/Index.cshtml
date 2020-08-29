@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@model IEnumerable<MyTravel.Entity.Photos>
+
+<h2> Slide Sekilleri </h2>
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="/Admin/Index">Ana Səhifə</a>
+    </li>
+    <li class="breadcrumb-item active">Cədvəl</li>
+</ol>
+<br />
+<a class="btn btn-primary btn-block" href="/Photo/Add">Slidere sekil Əlavə Et</a>
+<br />
+<!-- DataTables Example -->
+
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Sekili Gor</th>
+            <th>SIL</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>Sekili Gor</th>
+            <th>SIL</th>
+        </tr>
+    </tfoot>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><a href="@item.BoyukYol" class="sekil">Sekili gor</a></td>
+                <td><a href="/Photo/Sil/@item.Id">SIL</a></td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+<script src="~/Content/jquery.fancybox.js"></script>
+
+
+
+<script>
+    $(function () {
+        jQuery(".sekil").fancybox();
+    });
+</script>
+

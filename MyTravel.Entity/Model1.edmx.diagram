@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6f8bdbba8a374dcaa915957a0d8fcfa0" Name="Diagram1">
+        <EntityTypeShape EntityType="TravelDBModel.aspnet_Applications" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.aspnet_Membership" Width="1.5" PointX="6" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.aspnet_Paths" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.aspnet_PersonalizationAllUsers" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.aspnet_PersonalizationPerUser" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.aspnet_Profile" Width="1.5" PointX="10.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.aspnet_Roles" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.aspnet_SchemaVersions" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.aspnet_Users" Width="1.5" PointX="8.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.aspnet_WebEvent_Events" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.Kategoriya" Width="1.5" PointX="12.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.Mehsul" Width="1.5" PointX="15" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.MehsulOzellik" Width="1.5" PointX="19.5" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.Messaj" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.OzellikDeyer" Width="1.5" PointX="17.25" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.OzellikTip" Width="1.5" PointX="15" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.Photos" Width="1.5" PointX="17.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.Satis" Width="1.5" PointX="17.25" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.vw_aspnet_Applications" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.vw_aspnet_MembershipUsers" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.vw_aspnet_Profiles" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.vw_aspnet_Roles" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.vw_aspnet_Users" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.vw_aspnet_UsersInRoles" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.vw_aspnet_WebPartState_Paths" Width="1.5" PointX="11.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.vw_aspnet_WebPartState_Shared" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelDBModel.vw_aspnet_WebPartState_User" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
+        <AssociationConnector Association="TravelDBModel.FK__aspnet_Me__Appli__7A672E12" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelDBModel.FK__aspnet_Pa__Appli__2BFE89A6" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelDBModel.FK__aspnet_Ro__Appli__18EBB532" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelDBModel.FK__aspnet_Us__Appli__6A30C649" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelDBModel.FK__aspnet_Me__UserI__7B5B524B" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelDBModel.FK__aspnet_Pe__PathI__31B762FC" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelDBModel.FK__aspnet_Pe__PathI__3587F3E0" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelDBModel.FK__aspnet_Pe__UserI__367C1819" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelDBModel.FK__aspnet_Pr__UserI__0F624AF8" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelDBModel.FK_Mehsul_Kategoriya" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelDBModel.FK_OzellikTip_Kategoriya" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelDBModel.FK_Photos_Kategoriya" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelDBModel.FK_MehsulOzellik_Mehsul" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelDBModel.FK_Photos_Mehsul" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelDBModel.FK_Satis_Mehsul" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelDBModel.FK_MehsulOzellik_OzellikDeyer" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelDBModel.FK_MehsulOzellik_OzellikTip" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelDBModel.FK_OzellikDeyer_OzellikTip" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelDBModel.aspnet_UsersInRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,130 @@
+﻿
+@{
+    ViewBag.Title = "MehsulunOzelliyi";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@model IEnumerable <MyTravel.Entity.MehsulOzellik>
+
+<div class="container-fluid">
+
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Admin/Index">Ana Səhifə</a>
+        </li>
+        <li class="breadcrumb-item active">Cədvəl</li>
+    </ol>
+    <br />
+    @{ 
+        int a = 0;
+        foreach (var item in Model)
+        {
+            a = item.MehsulID;
+        }
+    }
+    <a class="btn btn-info" href="/MehsulOzellik/MehsulunOzelliyi/@a">Sehifeni Yenile</a>
+    <br /><br />
+    @*<br />
+    <a class="btn btn-primary btn-block" href="/MehsulOzellik/Add/">Mehsula ozellik Əlavə Et</a>*@
+    <br />
+    <!-- DataTables Example -->
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Data Table Example
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Mehsul</th>
+                            <th>Ozellik tipi</th>
+                            <th>Ozellik deyeri</th>
+                            <th>Cari Veziyyeti</th>
+                            <th>SIL</th>
+                            <th>GÜNCƏLLƏ</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Mehsul</th>
+                            <th>Ozellik tipi</th>
+                            <th>Ozellik deyeri</th>
+                            <th>Cari Veziyyeti</th>
+                            <th>SIL</th>
+                            <th>GÜNCƏLLƏ</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Mehsul.Adi</td>
+                                <td>@item.OzellikTip.Adi</td>
+                                <td>@item.OzellikDeyer.Adi</td>
+                                @if (item.IsActive == true)
+                                {
+                                    <td class="bg-success">Active</td>
+                                }
+                                else
+                                {
+                                    <td class="btn-danger">Deactive</td>
+                                }
+                                <td><a class="btn btn-primary btn-danger moSil" href="#" data-meh="@item.MehsulID" data-ozt="@item.OzellikTipID" data-ozd="@item.OzellikDeyerID">Sil</a></td>
+                                <td><a href="#">Guncelle</a></td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
+
+    <p class="small text-center text-muted my-5">
+        <em>More table examples coming soon...</em>
+    </p>
+</div>
+
+
+@section footer{
+
+        <script src="~/Content/Admin/js/sb-admin.min.js"></script>
+
+        <script>
+
+            $(document).ready(function () {
+                $(".moSil").click(function () {
+                    var mehsul = $(this).data("meh");
+                    var tip = $(this).data("ozt");
+                    var deyer = $(this).data("ozd");
+
+                    $.ajax({
+
+                        type: "POST",
+                        url: "/MehsulOzellik/Sil/",
+                        data: {
+                            mehsulId: mehsul,
+                            tipId: tip,
+                            deyerId: deyer
+                        },
+                        success: function my(gelen) {
+                            alert("Silindi");
+                        },
+                        error: function my() {
+                            alert("xeta oldu");
+                        }
+
+                    });
+                });
+            });
+
+        </script>
+
+
+    }
+

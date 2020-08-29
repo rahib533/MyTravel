@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "PhotoAdd";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@model MyTravel.Entity.Mehsul
+
+<h2>PhotoAdd</h2>
+
+<form enctype="multipart/form-data" method="post" action="/Mehsul/PhotosAdd">
+    <input type="hidden" value="@Model.Id" name="id" />
+    <h2>@Model.Adi mehsuluna sekil elave et</h2>
+    <br /><br />
+    <input type="file" name="fileUpload" />
+    <br /> <br />
+    <input style="margin-left:350px" type="submit" value="Kayd ele" class="btn btn-success" />
+</form>

@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@model IEnumerable<MyTravel.Entity.OzellikDeyer>
+
+
+    <div class="container-fluid">
+
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/Admin/Index">Ana Səhifə</a>
+            </li>
+            <li class="breadcrumb-item active">Cədvəl</li>
+        </ol>
+        <br />
+        <a class="btn btn-info" href="/OzellikDeyer/Index">Sehifeni Yenile</a>
+        <br /><br />
+        <br />
+        <a class="btn btn-primary btn-block" href="/OzellikDeyer/Add">Ozellik deyeri Əlavə Et</a>
+        <br />
+        <!-- DataTables Example -->
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                Data Table Example
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Adı</th>
+                                <th>Aciqlama</th>
+                                <th>Ozellik Tipi</th>
+                                <th>Kategoriyasi</th>
+                                <th>Cari Veziyyeti</th>
+                                <th>SIL</th>
+                                <th>GÜNCƏLLƏ</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Adı</th>
+                                <th>Aciqlama</th>
+                                <th>Ozellik Tipi</th>
+                                <th>Kategoriyasi</th>
+                                <th>Cari Veziyyeti</th>
+                                <th>SIL</th>
+                                <th>GÜNCƏLLƏ</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Adi</td>
+                                    <td>@item.Aciqlama</td>
+                                    <td>@item.OzellikTip.Adi</td>
+                                    <td>@item.OzellikTip.Kategoriya.Adi</td>
+                                    @if (item.IsActive == true)
+                                    {
+                                        <td class="bg-success">Active</td>
+                                    }
+                                    else
+                                    {
+                                        <td class="btn-danger">Deactive</td>
+                                    }
+                                    <td><a class="btn btn-primary btn-danger ozdSil" href="#" data-ozd="@item.Id">Sil</a></td>
+                                    <td><a  class="btn btn-primary btn-default" href="/OzellikDeyer/Update/@item.Id">Güncəllə</a></td>
+                                </tr>
+
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+        </div>
+
+        <p class="small text-center text-muted my-5">
+            <em>More table examples coming soon...</em>
+        </p>
+    </div>
+
+
+
+@section footer{
+
+    <script src="~/Content/Admin/js/sb-admin.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            $(".ozdSil").click(function () {
+                var deyer = $(this).data("ozd");
+
+                $.ajax({
+
+                    type: "GET",
+                    url: "/OzellikDeyer/Sil/" + deyer,
+
+                    success: function my(gelen) {
+                        alert("Ozelliyin deyeri Silindi");
+                    },
+                    error: function my() {
+                        alert("xeta oldu");
+                    }
+
+                });
+            });
+        });
+
+    </script>
+
+
+}

@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Add2";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@{ if (Model == 0)
+    {
+        <h2 class="bg-danger"> Error</h2>
+    }
+    else
+    {
+        <h2 class="bg-success">Success</h2>
+    }
+}

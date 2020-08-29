@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "GetMehsul";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model MyTravel.Entity.Mehsul
+
+
+    <div class="wrap">
+        <div class="about">
+            <br />
+
+            <h3>@Model.Adi</h3>
+            <a href="/Home/MehsulOzellik/@Model.Id" class="btn btn-primary">@Model.Adi mehsulunu sifaris et</a>
+            <br /><br />
+            @{
+                foreach (var item in Model.Photos.Where(x => x.IsActive == true))
+                {
+                    <img src="@item.BoyukYol" alt="" />
+                }
+            }
+        </div>
+        <div class="grids">
+            <div class="box1">
+                <div class="padding">
+                    <h4>Yeni 10 mehsul</h4>
+                    <ul class="list list-pad">
+                        @foreach (MyTravel.Entity.Mehsul item in ViewBag.TopOn)
+                        {
+                            <li class="list-bg"><span></span><a href="/Home/GetMehsul/@item.Id">@item.Adi</a></li>
+                        }
+                    </ul>
+                </div>
+                <div class="desti-middle">
+                    <h4>Bizim Kategoriyalarimiz</h4>
+                    @{
+                        foreach (MyTravel.Entity.Kategoriya item in ViewBag.Kategoriyalar)
+                        {
+                            <div class="box-left">
+                                                    <div class="bot-img">
+                                                        @{
+                                                            if (item.Photos.Count != 0)
+                                                            {
+                                                                <img src="@MyTravel.App_Classes.Tools.Context.Photos.FirstOrDefault(x=>x.KategoriyaID==item.Id && x.Main==true && x.IsActive==true).KicikYol" alt="" />
+                                                            }
+                                                            else
+                                                            {
+                                                    <p>sekil yoxdur</p>
+                                                            }
+                                                        }
+
+
+
+                                                    </div>
+                                <div style="word-break:break-all;" class="bot-desc">
+                                    <a href="/Home/GetKategoriya/@item.Id" class="btn btn-success">@item.Adi</a>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        }
+                    }
+
+
+                </div>
+                <div style="word-break:break-all;" class="desti-right text-break">
+                    <h4>Mehsul Haqqinda</h4>
+
+
+                    @Model.Haqqinda
+
+
+                </div>
+                    
+                  
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
